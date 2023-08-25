@@ -10,6 +10,7 @@ import Colors from '../constants/Colors';
 import { Octicons,MaterialCommunityIcons, MaterialIcons, FontAwesome5 } from '@expo/vector-icons';
 import MainTabNavigator from './MainTabNavigator';
 import ChatRoomScreen from '../screens/ChatRoomScreen';
+import ContactsScreen from '../screens/ContactsScreen';
 // If you are not familiar with React Navigation, we recommend going through the
 // "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
@@ -66,7 +67,10 @@ function RootNavigator() {
          )
          })} 
       />
-
+  <Stack.Screen
+        name="Contacts"
+        component={ContactsScreen}
+      />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
     </Stack.Navigator>
   );
